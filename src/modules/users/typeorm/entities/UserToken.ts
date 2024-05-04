@@ -2,22 +2,26 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  Generated,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
 
 @Entity("users")
-class UserToken {
+class User {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Column()
-  @Generated("uuid")
-  token: string;
+  name: string;
 
   @Column()
-  user_id: string;
+  email: string;
+
+  @Column()
+  password: string;
+
+  @Column()
+  avatar: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -26,4 +30,4 @@ class UserToken {
   updated_at: Date;
 }
 
-export default UserToken;
+export default User;
